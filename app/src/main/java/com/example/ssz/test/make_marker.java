@@ -48,7 +48,14 @@ public class make_marker extends AppCompatActivity implements OnMapReadyCallback
         initialize();
 
         super.onCreate(savedInstanceState);
+
         setContentView(com.example.ssz.R.layout.activity_make_marker);
+
+        try{
+            Thread.sleep(1000);
+        }catch(InterruptedException e){
+            e.printStackTrace();
+        }
         NaverMapSdk.getInstance(this).setClient(
                 new NaverMapSdk.NaverCloudPlatformClient(ApiSecretKey.X_NCP_APIGW_API_KEY_ID));
         mapView = (MapView) findViewById(R.id.map_view);
@@ -81,7 +88,6 @@ public class make_marker extends AppCompatActivity implements OnMapReadyCallback
         timestampGetUsingCamera = ((AppData)getApplication()).getTimestampGetCamera();
         storeNameGetUsingCamera = ((AppData)getApplication()).getStoreNameGetCamera();
 
-
         setLocation();
     }
 
@@ -100,11 +106,11 @@ public class make_marker extends AppCompatActivity implements OnMapReadyCallback
         // 건물 표시
         naverMap.setLayerGroupEnabled(naverMap.LAYER_GROUP_BUILDING, true);
     }
-
     private void setLocation() {
         new Thread(() -> {
-            //roadAddressGetUsingCamera.add("인천 미추홀구 인하로 53");
-            //roadAddressGetUsingCamera.add("인천 남구 경인남길30번길 61");
+            roadAddressGetUsingCamera.add("인천 미추홀구 인하로 71");
+            roadAddressGetUsingCamera.add("인천 남구 경인남길30번길 61");
+
             //roadAddressGetUsingCamera.add("서울 중구 세종대로110");
             //roadAddressGetUsingCamera.add("서울 중구 세종대로40");
             for (int i = 0; i < roadAddressGetUsingCamera.size(); i++) {
@@ -114,6 +120,7 @@ public class make_marker extends AppCompatActivity implements OnMapReadyCallback
                 }
             }
         }).start();
+
     }
 
     private void setMarker() {

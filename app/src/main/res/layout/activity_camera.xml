@@ -4,48 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:background="@drawable/gradient"
     tools:context=".test.Camera">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:id="@+id/iv_result"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/btn_capture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="촬영" />
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/btn_capture"
+        android:layout_marginRight="10dp"
+        android:layout_width="130dp"
+        android:layout_height="113dp"
+        android:layout_gravity="center"
+        android:background="@drawable/resource"
+        android:backgroundTint="#EDE7F6"
+        android:text="촬영"/>
 
     <Button
         android:id="@+id/c_route"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:text = "촬영 그만하기"
+        android:layout_width="130dp"
+        android:layout_height="113dp"
         android:layout_gravity="center"
-        android:text = "촬영 그만하기" ></Button>
-
-    <TextView
-        android:id="@+id/target"
-        android:layout_width="411dp"
-        android:layout_height="169dp"
-        android:textSize="10dp" />
-
-
+        android:background="@drawable/resource"
+        android:backgroundTint="#EDE7F6"
+         />
 </LinearLayout>
